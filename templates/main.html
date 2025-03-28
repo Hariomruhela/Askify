@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adderess - Home</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #E0E0E0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #1E1E1E;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #4A4A4A;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: #4A90E2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #357ABD;
+        }
+
+        .container {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 900px;
+            background-color: #1E1E1E;
+            padding: 30px;
+            border: 2px solid #4A4A4A;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #4A90E2;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #B0B0B0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #1E1E1E;
+            border: 2px solid #4A4A4A;
+            border-radius: 12px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: #4A4A4A;
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #4A90E2;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            background-color: #1E1E1E;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #4A4A4A;
+        }
+
+        .footer a {
+            color: #4A90E2;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="app-name">RAG</div>
+        <div class="nav-links">
+            <a href="{{ url_for('main') }}">Home</a>
+            <a href="{{url_for('about')}}">About</a>
+            <a href="{{ url_for('home') }}">Upload</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <h1>Welcome to RAG</h1>
+            <p>
+                RAG is a powerful file management system that allows users to upload documents,
+                extract data, and chat with your files for better insights and analysis. Designed with 
+                precision, our system empowers businesses and individuals to streamline their data retrieval process.
+            </p>
+
+            <h2>Our Key Features</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-icon">📂</div>
+                    <div class="card-title">File Upload</div>
+                    <p>Effortlessly upload files and extract meaningful data in seconds.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <div class="card-title">AI-Powered Chat</div>
+                    <p>Ask questions directly from your documents and receive instant answers.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">Data Analysis</div>
+                    <p>Get valuable insights and analysis from structured and unstructured data.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <div class="card-title">Secure Storage</div>
+                    <p>Your files are encrypted and securely stored for complete data safety.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            Contact us at: <strong>support@RAG.com</strong> | Phone: <strong>+91 7879069817</strong><br>
+            Follow us on:
+            <a href="https://github.com/" target="_blank">GitHub</a> |
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        </p>
+        <p>&copy; 2025 RAG - All Rights Reserved.</p>
+    </div>
+</body>
+</html>
