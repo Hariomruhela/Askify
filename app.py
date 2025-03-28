@@ -12,11 +12,11 @@ from flask_cors import CORS
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "Atp@4466"  # Required for session handling
+app.secret_key = "your_secret_key"  # Required for session handling
 CORS(app)
 
 # Database Connection
-engine = create_engine("mysql+pymysql://root:Atp%404466@localhost:3306/RAG")
+engine = create_engine("mysql+pymysql://{user_name}:{password}@{host}:{port}/{DB_name}")
 connection = engine.connect()
 
 Base = declarative_base()
