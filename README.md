@@ -44,12 +44,12 @@
 
 3. AI Integration: Google Gemini
 
-4. Frontend: HTML, CSS, JavaScript
+4. Frontend: HTML, CSS, JavaScript,react
 
 ## 📬 Contact
-📧 Email: ashishparmar9817@gmail.com
+📧 Email: hariomruhela@gmail.com
 
-📞 Phone: 7879069817
+📞 Phone: 8770948303
 
 🌐 LinkedIn | GitHub
 
