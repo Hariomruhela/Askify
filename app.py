@@ -16,7 +16,7 @@ app.secret_key = "your_secret_key"  # Required for session handling
 CORS(app)
 
 # Database Connection
-engine = create_engine("mysql+pymysql://{user_name}:{password}@{host}:{port}/{DB_name}")
+engine = create_engine("mysql+pymysql://root:atp@localhost:3306/RAG")
 connection = engine.connect()
 
 Base = declarative_base()
@@ -66,7 +66,16 @@ def home():
             return jsonify({"Error": "File must be CSV or Excel sheet"})
         print("File Type IS : ",file_type)
         columns = file_type.columns.tolist()
-        columns_table = [Column(column_name, String(255)) for column_name in columns]
+        # columns_table = [Column(column_name, String(255)) for column_name in columns]
+        columns_table = []
+        for column_name in columns:
+            if isinstance(column_name, str) and column_name.strip():  # check it's a valid string
+                sanitized_column = column_name.strip()
+                columns_table.append(Column(sanitized_column, String(255)))
+            else:
+                print(f"Skipping invalid column name: {column_name}")
+
+
 
         table_name = temp_file_path.split(".")[0].replace("(", "").replace(")", "")
         table_name = f"temp_{file.filename.split('.')[0].replace(' ', '_')}"
@@ -89,7 +98,7 @@ def home():
         meta.create_all(engine)
 
         data_to_insert = file_type.to_dict(orient="records")
-
+        print("data to insert in db ",data_to_insert)
         with connection.begin():
             connection.execute(dynamic_table.insert(), data_to_insert)
 

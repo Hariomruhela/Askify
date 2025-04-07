@@ -8,6 +8,9 @@ def excel_reader(file_path):
     """
     try:
         df = pd.read_excel(file_path)
+        df.columns = df.columns.astype(str)
+        df = df.astype(str)  # <-- Add this
+
         return df
     except Exception as e:
         print(f"Error reading Excel file: {e}")
@@ -21,6 +24,8 @@ def csv_reader(file_path):
     """
     try:
         df = pd.read_csv(file_path)
+        df.columns = df.columns.astype(str)
+        df = df.astype(str)
         return df
     except Exception as e:
         print(f"Error reading CSV file: {e}")
